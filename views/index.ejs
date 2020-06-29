@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div>
+      <h1>
+        HELLO WORLD
+      </h1>
+      <h2>
+        MOST BEUTiAFUL PLAYER
+      </h2>
+   </div>
+   <div class="player">
+      <div class="up-container">
+        <div class="pic">
+          <img src="images/audio.jpg">
+        </div>
+        <div class="content">
+          <div>Black Pumas</div>
+          <div>Colors</div>
+        </div> 
+        <div class="upper-right">
+          <div id='volPlus'>+</div>
+          <div class="volume" id='volume'>
+          </div>
+          <div id='volDown'>-</div>
+        </div>
+      </div>
+      <div class="low-container">
+        <div class='logo'><p></p></div>
+        <div class="controls">
+         <a><i id="playBtn" class="fa fa-play"></i></a>
+         <a><i id="pauseBtn" class="fa fa-pause"></i></a>
+         <a><i id="stopBtn" class="fa fa-stop"></i></a>
+        </div>
+      </div>  
+    </div>
+  </body>
+</html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  var volume = 0.5;  
+  var volBG = 0.5;
+  var audio = new Audio('https://mendelhaim.podbean.com/mf/play/2y3ywb/AubryEp11.mp3'); 
+  audio.volume = volume;
+ 
+  $("#volPlus").click(function(){
+    if( volume > 0.9){
+      alert('Max volume')
+    }
+    else{
+
+    volume = volume + 0.1;
+    volBG = volBG - 0.1;
+    audio.volume = volume;
+    var str = `linear-gradient(white ` + volBG*100 +`%, black 100% )`;
+    document.getElementById("volume").style.background= str;
+    console.log(str);
+    } 
+  });
+     
+  $('#volDown').click(function(){
+    if(volume < 0.1){
+      alert('Volume on mute');
+    }
+    else{
+    volume = volume - 0.1;
+    volBG = volBG +0.1;
+    audio.volume = volume;
+    var str = `linear-gradient(white ` + volBG*100 +`%, black 100% )`;
+    document.getElementById('volume').style.background= str; 
+    console.log(str)
+    }
+  });
+
+  $("#playBtn").click(function(){
+    console.log('click');
+    audio.play();
+  });
+
+  $("#pauseBtn").click(function(){
+    audio.pause();
+  });
+
+  $("#stopBtn").click(function(){
+    audio.pause();
+    audio.currentTime=0;
+  });
+});
+</script>

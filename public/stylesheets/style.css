@@ -1,0 +1,80 @@
+
+/* mobile */
+body { 
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  padding: 3px;
+}
+i{
+  border-radius: 50%;
+  border:2px solid white;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: yellow;
+  text-align: center;
+  align-items: center;  
+ }
+ img{ 
+  width: 150px;
+  height: 100px;
+ }
+.player{
+  background: black;
+  height: 150px;
+}
+.up-container{
+  display: flex;
+  flex-direction:row;
+  color: white;
+  background: cornflowerblue;
+  height: 100px; 
+}
+.low-container{
+  background: brown;
+  height: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+.logo{
+   background: cyan;
+   width: 50px;
+   font-size: 14px;
+   font-weight: 700;
+}
+.controls{
+  position: relative;
+  left: 100px;
+  background: cornflowerblue;
+  display: flex;
+  align-items: center;
+} 
+.content{
+  display:flex;
+  flex-direction: column;
+  background: cyan;
+  color: black;
+  width: 50%;
+  padding: 5px;
+}
+.upper-right{  
+  width: 50px;
+  height: 100%;
+  position: relative;
+  background: coral;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.volume{
+  height: 80%;
+  width: 5px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+  background: linear-gradient(white 50%, black 100% );
+}
